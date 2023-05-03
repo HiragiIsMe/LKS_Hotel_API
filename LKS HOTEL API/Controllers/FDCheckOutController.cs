@@ -11,13 +11,13 @@ namespace LKS_HOTEL_API.Controllers
 {
     public class FDCheckOutController : ApiController
     {
-        HotelEntities ent = new HotelEntities();
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-S8UCE514;Initial Catalog=Hotel;Integrated Security=True;");
+        HotelEntities1 ent = new HotelEntities1();
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-HUJGH1E\SQLEXPRESS;Initial Catalog=Hotel;Integrated Security=True;");
         private int IdReser;
         [HttpPost]
-        public bool post(FDCheckout fd)
+        public bool post(FDCheckOutModel fd)
         {
-            SqlCommand cmd = new SqlCommand("select top(1) id from reservationRoom where roomId = " + fd.ReservationRoomID + " order by id desc", conn);
+            SqlCommand cmd = new SqlCommand("select top(1) id from reservationRoom where roomId = " + fd.RoomID + " order by id desc", conn);
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             reader.Read();

@@ -11,7 +11,7 @@ namespace LKS_HOTEL_API.Controllers
 {
     public class FDController : ApiController
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-S8UCE514;Initial Catalog=Hotel;Integrated Security=True;");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-HUJGH1E\SQLEXPRESS;Initial Catalog=Hotel;Integrated Security=True;");
         public DataTable getData(string q)
         {
             SqlCommand cmd = new SqlCommand(q, conn);

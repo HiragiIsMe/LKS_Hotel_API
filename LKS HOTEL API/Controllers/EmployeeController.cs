@@ -12,7 +12,7 @@ namespace LKS_HOTEL_API.Controllers
 {
     public class EmployeeController : ApiController
     {
-        HotelEntities ent = new HotelEntities();
+        HotelEntities1 ent = new HotelEntities1();
 
         string encrypt(string s)
         {
@@ -37,8 +37,12 @@ namespace LKS_HOTEL_API.Controllers
 
                 return Ok(e);
             }
+            else
+            {
+                return Ok(user);
+            }
 
-            return null;
+            return BadRequest();
         }
     }
 }

@@ -206,7 +206,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__Custo__52593CB8">
+        <Association Name="FK__Reservati__Custo__534D60F1">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -220,7 +220,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__ItemI__534D60F1">
+        <Association Name="FK__Reservati__ItemI__5441852A">
           <End Role="Item" Type="Self.Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -234,7 +234,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__ItemI__5629CD9C">
+        <Association Name="FK__Reservati__ItemI__571DF1D5">
           <End Role="Item" Type="Self.Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -248,7 +248,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__ItemS__5441852A">
+        <Association Name="FK__Reservati__ItemS__5535A963">
           <End Role="ItemStatus" Type="Self.ItemStatus" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -361,19 +361,19 @@
             <End Role="FoodsAndDrinks" EntitySet="FoodsAndDrinks" />
             <End Role="FDCheckout" EntitySet="FDCheckout" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__Custo__52593CB8" Association="Self.FK__Reservati__Custo__52593CB8">
+          <AssociationSet Name="FK__Reservati__Custo__534D60F1" Association="Self.FK__Reservati__Custo__534D60F1">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Reservation" EntitySet="Reservation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__ItemI__534D60F1" Association="Self.FK__Reservati__ItemI__534D60F1">
+          <AssociationSet Name="FK__Reservati__ItemI__5441852A" Association="Self.FK__Reservati__ItemI__5441852A">
             <End Role="Item" EntitySet="Item" />
             <End Role="ReservationCheckOut" EntitySet="ReservationCheckOut" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__ItemI__5629CD9C" Association="Self.FK__Reservati__ItemI__5629CD9C">
+          <AssociationSet Name="FK__Reservati__ItemI__571DF1D5" Association="Self.FK__Reservati__ItemI__571DF1D5">
             <End Role="Item" EntitySet="Item" />
             <End Role="ReservationRequestItem" EntitySet="ReservationRequestItem" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__ItemS__5441852A" Association="Self.FK__Reservati__ItemS__5441852A">
+          <AssociationSet Name="FK__Reservati__ItemS__5535A963" Association="Self.FK__Reservati__ItemS__5535A963">
             <End Role="ItemStatus" EntitySet="ItemStatus" />
             <End Role="ReservationCheckOut" EntitySet="ReservationCheckOut" />
           </AssociationSet>
@@ -414,7 +414,7 @@
           <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Age" Type="Int32" />
-          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__Custo__52593CB8" FromRole="Customer" ToRole="Reservation" />
+          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__Custo__534D60F1" FromRole="Customer" ToRole="Reservation" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -465,8 +465,8 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RequestPrice" Type="Int32" Nullable="false" />
           <Property Name="CompensationFee" Type="Int32" />
-          <NavigationProperty Name="ReservationCheckOuts" Relationship="Self.FK__Reservati__ItemI__534D60F1" FromRole="Item" ToRole="ReservationCheckOut" />
-          <NavigationProperty Name="ReservationRequestItems" Relationship="Self.FK__Reservati__ItemI__5629CD9C" FromRole="Item" ToRole="ReservationRequestItem" />
+          <NavigationProperty Name="ReservationCheckOuts" Relationship="Self.FK__Reservati__ItemI__5441852A" FromRole="Item" ToRole="ReservationCheckOut" />
+          <NavigationProperty Name="ReservationRequestItems" Relationship="Self.FK__Reservati__ItemI__571DF1D5" FromRole="Item" ToRole="ReservationRequestItem" />
         </EntityType>
         <EntityType Name="ItemStatu">
           <Key>
@@ -474,7 +474,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ReservationCheckOuts" Relationship="Self.FK__Reservati__ItemS__5441852A" FromRole="ItemStatus" ToRole="ReservationCheckOut" />
+          <NavigationProperty Name="ReservationCheckOuts" Relationship="Self.FK__Reservati__ItemS__5535A963" FromRole="ItemStatus" ToRole="ReservationCheckOut" />
         </EntityType>
         <EntityType Name="Job">
           <Key>
@@ -493,7 +493,7 @@
           <Property Name="EmployeeID" Type="Int32" Nullable="false" />
           <Property Name="CustomerID" Type="Int32" Nullable="false" />
           <Property Name="BookingCode" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK__Reservati__Custo__52593CB8" FromRole="Reservation" ToRole="Customer" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Reservati__Custo__534D60F1" FromRole="Reservation" ToRole="Customer" />
           <NavigationProperty Name="ReservationRooms" Relationship="Self.FK__Reservati__Reser__37A5467C" FromRole="Reservation" ToRole="ReservationRoom" />
         </EntityType>
         <EntityType Name="ReservationCheckOut">
@@ -506,8 +506,8 @@
           <Property Name="ItemStatusID" Type="Int32" Nullable="false" />
           <Property Name="Qty" Type="Int32" Nullable="false" />
           <Property Name="TotalCharge" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Item" Relationship="Self.FK__Reservati__ItemI__534D60F1" FromRole="ReservationCheckOut" ToRole="Item" />
-          <NavigationProperty Name="ItemStatu" Relationship="Self.FK__Reservati__ItemS__5441852A" FromRole="ReservationCheckOut" ToRole="ItemStatus" />
+          <NavigationProperty Name="Item" Relationship="Self.FK__Reservati__ItemI__5441852A" FromRole="ReservationCheckOut" ToRole="Item" />
+          <NavigationProperty Name="ItemStatu" Relationship="Self.FK__Reservati__ItemS__5535A963" FromRole="ReservationCheckOut" ToRole="ItemStatus" />
           <NavigationProperty Name="ReservationRoom" Relationship="Self.FK__Reservati__Reser__412EB0B6" FromRole="ReservationCheckOut" ToRole="ReservationRoom" />
         </EntityType>
         <EntityType Name="ReservationRequestItem">
@@ -519,7 +519,7 @@
           <Property Name="ItemID" Type="Int32" Nullable="false" />
           <Property Name="Qty" Type="Int32" Nullable="false" />
           <Property Name="TotalPrice" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Item" Relationship="Self.FK__Reservati__ItemI__5629CD9C" FromRole="ReservationRequestItem" ToRole="Item" />
+          <NavigationProperty Name="Item" Relationship="Self.FK__Reservati__ItemI__571DF1D5" FromRole="ReservationRequestItem" ToRole="Item" />
           <NavigationProperty Name="ReservationRoom" Relationship="Self.FK__Reservati__Reser__3D5E1FD2" FromRole="ReservationRequestItem" ToRole="ReservationRoom" />
         </EntityType>
         <EntityType Name="ReservationRoom">
@@ -574,7 +574,7 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK__Reservati__Custo__52593CB8">
+        <Association Name="FK__Reservati__Custo__534D60F1">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -644,7 +644,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__ItemI__534D60F1">
+        <Association Name="FK__Reservati__ItemI__5441852A">
           <End Role="Item" Type="Self.Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -658,7 +658,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__ItemI__5629CD9C">
+        <Association Name="FK__Reservati__ItemI__571DF1D5">
           <End Role="Item" Type="Self.Item" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -672,7 +672,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__ItemS__5441852A">
+        <Association Name="FK__Reservati__ItemS__5535A963">
           <End Role="ItemStatus" Type="Self.ItemStatu" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -754,7 +754,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HotelEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="HotelEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="FDCheckouts" EntityType="Self.FDCheckout" />
@@ -769,7 +769,7 @@
           <EntitySet Name="Rooms" EntityType="Self.Room" />
           <EntitySet Name="RoomTypes" EntityType="Self.RoomType" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <AssociationSet Name="FK__Reservati__Custo__52593CB8" Association="Self.FK__Reservati__Custo__52593CB8">
+          <AssociationSet Name="FK__Reservati__Custo__534D60F1" Association="Self.FK__Reservati__Custo__534D60F1">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Reservation" EntitySet="Reservations" />
           </AssociationSet>
@@ -789,15 +789,15 @@
             <End Role="FoodsAndDrinks" EntitySet="FoodsAndDrinks" />
             <End Role="FDCheckout" EntitySet="FDCheckouts" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__ItemI__534D60F1" Association="Self.FK__Reservati__ItemI__534D60F1">
+          <AssociationSet Name="FK__Reservati__ItemI__5441852A" Association="Self.FK__Reservati__ItemI__5441852A">
             <End Role="Item" EntitySet="Items" />
             <End Role="ReservationCheckOut" EntitySet="ReservationCheckOuts" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__ItemI__5629CD9C" Association="Self.FK__Reservati__ItemI__5629CD9C">
+          <AssociationSet Name="FK__Reservati__ItemI__571DF1D5" Association="Self.FK__Reservati__ItemI__571DF1D5">
             <End Role="Item" EntitySet="Items" />
             <End Role="ReservationRequestItem" EntitySet="ReservationRequestItems" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__ItemS__5441852A" Association="Self.FK__Reservati__ItemS__5441852A">
+          <AssociationSet Name="FK__Reservati__ItemS__5535A963" Association="Self.FK__Reservati__ItemS__5535A963">
             <End Role="ItemStatus" EntitySet="ItemStatus" />
             <End Role="ReservationCheckOut" EntitySet="ReservationCheckOuts" />
           </AssociationSet>
@@ -827,7 +827,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HotelModelStoreContainer" CdmEntityContainer="HotelEntities">
+        <EntityContainerMapping StorageEntityContainer="HotelModelStoreContainer" CdmEntityContainer="HotelEntities1">
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="HotelModel.Customer">
               <MappingFragment StoreEntitySet="Customer">

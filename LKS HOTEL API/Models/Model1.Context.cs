@@ -13,10 +13,10 @@ namespace LKS_HOTEL_API.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HotelEntities : DbContext
+    public partial class HotelEntities1 : DbContext
     {
-        public HotelEntities()
-            : base("name=HotelEntities")
+        public HotelEntities1()
+            : base("name=HotelEntities1")
         {
         }
     
