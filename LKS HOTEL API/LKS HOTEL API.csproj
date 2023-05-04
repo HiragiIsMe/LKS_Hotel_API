@@ -199,6 +199,7 @@
     <Compile Include="Models\ReservationRoom.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\Room.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

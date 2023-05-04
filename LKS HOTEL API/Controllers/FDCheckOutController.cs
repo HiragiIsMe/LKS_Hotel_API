@@ -15,7 +15,7 @@ namespace LKS_HOTEL_API.Controllers
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-HUJGH1E\SQLEXPRESS;Initial Catalog=Hotel;Integrated Security=True;");
         private int IdReser;
         [HttpPost]
-        public bool post(FDCheckOutModel fd)
+        public IHttpActionResult post(FDCheckOutModel fd)
         {
             SqlCommand cmd = new SqlCommand("select top(1) id from reservationRoom where roomId = " + fd.RoomID + " order by id desc", conn);
             conn.Open();
@@ -30,11 +30,15 @@ namespace LKS_HOTEL_API.Controllers
             {
                 cmd1.ExecuteNonQuery();
                 conn.Close();
-                return true;
+                ResponseModel responseModel = new ResponseModel();
+                responseModel.Status = 1;
+
+                return Ok(responseModel);
             }catch(Exception ex)
             {
-                conn.Close();
-                return false;
+                ResponseModel responseModel = new ResponseModel();
+                responseModel.Status = 0;
+                return Ok(responseModel);
             }
         }
     }
